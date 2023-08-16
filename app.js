@@ -1,4 +1,5 @@
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
+import { InlineEditor } from '@ckeditor/ckeditor5-editor-inline'
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
@@ -17,8 +18,8 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
 import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
 import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js';
-
 class Editor extends ClassicEditor { }
+// class Editor extends InlineEditor { }
 // Plugins to include in the build.
 Editor.builtinPlugins = [
     Essentials,
@@ -38,7 +39,7 @@ Editor.builtinPlugins = [
     PasteFromOffice,
     RemoveFormat,
     WordCount,
-    EditorWatchdog,
+    // EditorWatchdog,
 ];
 
 // Editor configuration.
@@ -65,4 +66,5 @@ Editor.defaultConfig = {
 };
 // https://stackoverflow.com/questions/50657924/getting-classiceditor-exported-on-custom-build-of-ckeditor-5
 window.ClassicEditor = Editor;
+// window.InlineEditor = Editor;
 export default Editor;
