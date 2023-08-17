@@ -1,80 +1,75 @@
-'use strict';
-// https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
-const { CKEditorTranslationsPlugin } = require('@ckeditor/ckeditor5-dev-translations');
+/**
+ * @license Copyright (c) 2003-2023, CKSource Holding sp. z o.o. All rights reserved.
+ * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ */
 
+'use strict';
+
+/* eslint-env node */
 
 const path = require('path');
-const { styles } = require('@ckeditor/ckeditor5-dev-utils');
+const webpack = require('webpack');
+const { bundler, loaders } = require('@ckeditor/ckeditor5-dev-utils');
+const { CKEditorTranslationsPlugin } = require('@ckeditor/ckeditor5-dev-translations');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
-    // https://webpack.js.org/configuration/entry-context/
-    entry: './app.js',
+    devtool: 'source-map',
+    performance: { hints: false },
 
-    // https://webpack.js.org/configuration/output/
+    entry: path.resolve(__dirname, 'src', 'ckeditor.js'),
+
     output: {
+        // The name under which the editor will be exported.
         library: 'CKEDITOR',
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+
+        path: path.resolve(__dirname, 'build'),
+        filename: 'ckeditor.js',
+        libraryTarget: 'umd',
+        libraryExport: 'default'
     },
 
-    module: {
-        rules: [
-            {
-                test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
-
-                use: ['raw-loader']
-            },
-            {
-                test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
-
-                use: [
-                    {
-                        loader: 'style-loader',
-                        options: {
-                            injectType: 'singletonStyleTag',
-                            attributes: {
-                                'data-cke': true
-                            }
-                        }
-                    },
-                    'css-loader',
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            postcssOptions: styles.getPostCssConfig({
-                                themeImporter: {
-                                    themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
-                                },
-                                minify: true
-                            })
-                        }
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                sourceMap: true,
+                terserOptions: {
+                    output: {
+                        // Preserve CKEditor 5 license comments.
+                        comments: /^!/
                     }
-                ]
-            }
+                },
+                extractComments: false
+            })
         ]
     },
 
     plugins: [
-        // https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
         new CKEditorTranslationsPlugin({
-            // The main language that will be built into the main bundle.
-            language: 'zh',
-
-            // Additional languages that will be emitted to the `outputDirectory`.
-            // This option can be set to an array of language codes or `'all'` to build all found languages.
-            // The bundle is optimized for one language when this option is omitted.
-            additionalLanguages: 'all',
-
-            // For more advanced options see https://github.com/ckeditor/ckeditor5-dev/tree/master/packages/ckeditor5-dev-translations.
+            // UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
+            // When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
+            language: 'en',
+            additionalLanguages: 'all'
         }),
-
-        // Other webpack plugins.
-        // ...
+        new webpack.BannerPlugin({
+            banner: bundler.getLicenseBanner(),
+            raw: true
+        })
     ],
 
-    // Useful for debugging.
-    devtool: 'source-map',
+    module: {
+        rules: [
+            loaders.getIconsLoader({ matchExtensionOnly: true }),
+            loaders.getStylesLoader({
+                themePath: require.resolve('@ckeditor/ckeditor5-theme-lark'),
+                minify: true
+            }),
+            loaders.getTypeScriptLoader()
+        ]
+    },
 
-    // By default webpack logs warnings if the bundle is bigger than 200kb.
-    performance: { hints: false }
+    resolve: {
+        extensions: ['.ts', '.js', '.json']
+    }
 };
+
