@@ -24,7 +24,7 @@ module.exports = {
         library: 'CKEDITOR',
 
         path: path.resolve(__dirname, 'build'),
-        filename: 'ckeditor.js',
+        filename: 'bundle.js',
         libraryTarget: 'umd',
         libraryExport: 'default'
     },
