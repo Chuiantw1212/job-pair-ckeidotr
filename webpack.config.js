@@ -1,9 +1,10 @@
-// webpack.config.js
-
 'use strict';
+// https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
+const { CKEditorTranslationsPlugin } = require('@ckeditor/ckeditor5-dev-translations');
 
-const path = require( 'path' );
-const { styles } = require( '@ckeditor/ckeditor5-dev-utils' );
+
+const path = require('path');
+const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
 module.exports = {
     // https://webpack.js.org/configuration/entry-context/
@@ -11,7 +12,7 @@ module.exports = {
 
     // https://webpack.js.org/configuration/output/
     output: {
-        path: path.resolve( __dirname, 'dist' ),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
 
@@ -20,7 +21,7 @@ module.exports = {
             {
                 test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
 
-                use: [ 'raw-loader' ]
+                use: ['raw-loader']
             },
             {
                 test: /ckeditor5-[^/\\]+[/\\]theme[/\\].+\.css$/,
@@ -39,18 +40,36 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            postcssOptions: styles.getPostCssConfig( {
+                            postcssOptions: styles.getPostCssConfig({
                                 themeImporter: {
-                                    themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' )
+                                    themePath: require.resolve('@ckeditor/ckeditor5-theme-lark')
                                 },
                                 minify: true
-                            } )
+                            })
                         }
                     }
                 ]
             }
         ]
     },
+
+    plugins: [
+        // https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
+        new CKEditorTranslationsPlugin({
+            // The main language that will be built into the main bundle.
+            language: 'zh',
+
+            // Additional languages that will be emitted to the `outputDirectory`.
+            // This option can be set to an array of language codes or `'all'` to build all found languages.
+            // The bundle is optimized for one language when this option is omitted.
+            additionalLanguages: 'all',
+
+            // For more advanced options see https://github.com/ckeditor/ckeditor5-dev/tree/master/packages/ckeditor5-dev-translations.
+        }),
+
+        // Other webpack plugins.
+        // ...
+    ],
 
     // Useful for debugging.
     devtool: 'source-map',

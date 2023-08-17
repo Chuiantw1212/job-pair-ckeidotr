@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-basic-styles": "^38.0.1",
+    "@ckeditor/ckeditor5-dev-translations": "^38.3.1",
     "@ckeditor/ckeditor5-dev-utils": "^38.0.1",
     "@ckeditor/ckeditor5-editor-classic": "^38.0.1",
     "@ckeditor/ckeditor5-editor-inline": "^39.0.1",
