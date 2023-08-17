@@ -73,4 +73,6 @@ InlineEditor.defaultConfig = defaultConfig
 // https://stackoverflow.com/questions/50657924/getting-classiceditor-exported-on-custom-build-of-ckeditor-5
 window.ClassicEditor = ClassicEditor;
 window.InlineEditor = InlineEditor;
-export default Editor;
+export default {
+    ClassicEditor, InlineEditor
+};;

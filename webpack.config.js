@@ -12,8 +12,9 @@ module.exports = {
 
     // https://webpack.js.org/configuration/output/
     output: {
+        library: 'CKEDITOR',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
 
     module: {
