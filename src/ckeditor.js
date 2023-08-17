@@ -95,6 +95,9 @@ const config = {
 ClassicEditor.defaultConfig = config;
 InlineEditor.defaultConfig = config;
 
+window.ClassicEditor = ClassicEditor
+window.InlineEditor = InlineEditor
+
 export default {
     ClassicEditor, InlineEditor
 };
