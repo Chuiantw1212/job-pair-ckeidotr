@@ -15,8 +15,8 @@ import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 // import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
-import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
-import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js';
+// import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
+// import EditorWatchdog from '@ckeditor/ckeditor5-watchdog/src/editorwatchdog.js';
 
 class Editor extends ClassicEditor { }
 // Plugins to include in the build.
@@ -37,8 +37,8 @@ Editor.builtinPlugins = [
     // MediaEmbedToolbar,
     PasteFromOffice,
     RemoveFormat,
-    WordCount,
-    EditorWatchdog,
+    // WordCount,
+    // EditorWatchdog,
 ];
 
 // Editor configuration.
