@@ -1,17 +1,9 @@
-/*
- * The base configuration used by all other configuration.
- *
- * Be careful when updating this file. It may affect building docs, preparing DLLs, executing tests, or impacts the release process.
- */
 {
-    "compilerOptions": {
-        "declaration": true,
-        "emitDeclarationOnly": true,
-        "declarationDir": "build",
-        "stripInternal": true
-    },
-    "include": [
-        "src",
-        "typings"
-    ]
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "build",
+    "stripInternal": true
+  }
 }
