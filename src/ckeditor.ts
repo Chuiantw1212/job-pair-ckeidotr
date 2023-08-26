@@ -44,18 +44,25 @@ class Editor extends ClassicEditor {
 	public static override defaultConfig = {
 		toolbar: {
 			items: [
+				'undo',
+				'redo',
+				'|',
 				'heading',
+				'|',
+				'fontSize',
 				'|',
 				'bold',
 				'italic',
+				'fontColor',
+				'|',
 				'link',
+				'imageUpload',
+				'mediaEmbed',
+				'|',
 				'bulletedList',
 				'numberedList',
 				'|',
-				'imageUpload',
-				'mediaEmbed',
-				'undo',
-				'redo'
+				'removeFormat'
 			]
 		},
 		language: 'zh'
