@@ -4,6 +4,7 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
 // Add custom features
 import { AutoImage } from '@ckeditor/ckeditor5-image';
+import { Font } from '@ckeditor/ckeditor5-font';
 import { AutoLink, Link } from '@ckeditor/ckeditor5-link';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import DataFilter from '@ckeditor/ckeditor5-html-support/src/datafilter.js';
@@ -39,24 +40,30 @@ Editor.builtinPlugins = [
     RemoveFormat,
     // WordCount,
     // EditorWatchdog,
+    Font,
 ];
 
 // Editor configuration.
 Editor.defaultConfig = {
     toolbar: {
         items: [
+            'undo',
+            'redo',
+            '|',
             'heading',
+            '|',
+            'fontSize',
             '|',
             'bold',
             'italic',
-            'link',
-            'bulletedList',
-            'numberedList',
+            'fontColor',
             '|',
+            'link',
             'imageUpload',
             'mediaEmbed',
-            'undo',
-            'redo',
+            '|',
+            'bulletedList',
+            'numberedList',
             '|',
             'removeFormat'
         ]
