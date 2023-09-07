@@ -5,19 +5,30 @@
 
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 
+import { Alignment } from '@ckeditor/ckeditor5-alignment';
+import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
+import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
+import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { FontColor, FontSize } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
-import { DataFilter } from '@ckeditor/ckeditor5-html-support';
-import { Image, ImageUpload } from '@ckeditor/ckeditor5-image';
-import { Link, LinkImage } from '@ckeditor/ckeditor5-link';
+import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
+import {
+	Image,
+	ImageCaption,
+	ImageStyle,
+	ImageToolbar,
+	ImageUpload
+} from '@ckeditor/ckeditor5-image';
+import { Indent } from '@ckeditor/ckeditor5-indent';
+import { Link } from '@ckeditor/ckeditor5-link';
 import { List } from '@ckeditor/ckeditor5-list';
 import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
-import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
-import { Alignment } from '@ckeditor/ckeditor5-alignment';
+import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
+import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 
 // You can read more about extending the build with additional plugins in the "Installing plugins" guide.
 // See https://ckeditor.com/docs/ckeditor5/latest/installation/plugins/installing-plugins.html for details.
@@ -25,21 +36,29 @@ import { Alignment } from '@ckeditor/ckeditor5-alignment';
 class Editor extends ClassicEditor {
 	public static override builtinPlugins = [
 		Alignment,
+		// Autoformat,
+		// BlockQuote,
 		Bold,
-		DataFilter,
+		// CloudServices,
 		Essentials,
 		FontColor,
 		FontSize,
 		Heading,
 		Image,
-		ImageUpload,
+		// ImageCaption,
+		// ImageStyle,
+		// ImageToolbar,
+		// ImageUpload,
+		// Indent,
 		Italic,
 		Link,
-		LinkImage,
 		List,
 		MediaEmbed,
 		Paragraph,
 		PasteFromOffice,
+		// Table,
+		// TableToolbar,
+		// TextTransformation,
 		RemoveFormat
 	];
 
@@ -68,7 +87,23 @@ class Editor extends ClassicEditor {
 				'removeFormat'
 			]
 		},
-		language: 'zh'
+		language: 'zh',
+		// image: {
+		// 	toolbar: [
+		// 		'imageTextAlternative',
+		// 		'toggleImageCaption',
+		// 		'imageStyle:inline',
+		// 		'imageStyle:block',
+		// 		'imageStyle:side'
+		// 	]
+		// },
+		// table: {
+		// 	contentToolbar: [
+		// 		'tableColumn',
+		// 		'tableRow',
+		// 		'mergeTableCells'
+		// 	]
+		// }
 	};
 }
 
