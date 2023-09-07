@@ -5,7 +5,8 @@ import { InlineEditor as InlineEditorBase } from '@ckeditor/ckeditor5-editor-inl
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { DataFilter, GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
+import { Font, FontFamily } from '@ckeditor/ckeditor5-font';
+import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import {
     Image,
@@ -24,8 +25,10 @@ class InlineEditor extends InlineEditorBase { }
 const plugins = [
     Alignment,
     Bold,
-    DataFilter,
+    // DataFilter,
     Essentials,
+    Font,
+    FontFamily,
     GeneralHtmlSupport,
     Heading,
     Image,
