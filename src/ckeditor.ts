@@ -59,6 +59,7 @@ class Editor extends ClassicEditor {
 				'imageUpload',
 				'mediaEmbed',
 				'|',
+				'alignment',
 				'bulletedList',
 				'numberedList',
 				'|',
