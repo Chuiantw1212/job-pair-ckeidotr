@@ -67,6 +67,15 @@ const config = {
         ]
     },
     language: 'zh',
+    // https://ckeditor.com/docs/ckeditor5/latest/features/html/general-html-support.html
+    allow: [
+        {
+            name: /.*/,
+            attributes: true,
+            classes: true,
+            styles: true
+        }
+    ],
 };
 
 ClassicEditor.defaultConfig = config;
