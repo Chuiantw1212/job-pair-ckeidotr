@@ -2,10 +2,10 @@
 import { ClassicEditor as ClassicEditorBase } from '@ckeditor/ckeditor5-editor-classic';
 import { InlineEditor as InlineEditorBase } from '@ckeditor/ckeditor5-editor-inline';
 // Plugins
-import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
+import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import {
     Image,
@@ -25,6 +25,7 @@ const plugins = [
     Alignment,
     Bold,
     Essentials,
+    GeneralHtmlSupport,
     Heading,
     Image,
     Indent,
