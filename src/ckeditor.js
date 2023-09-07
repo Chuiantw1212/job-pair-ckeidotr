@@ -5,7 +5,7 @@ import { InlineEditor as InlineEditorBase } from '@ckeditor/ckeditor5-editor-inl
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
-import { GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
+import { DataFilter, GeneralHtmlSupport } from '@ckeditor/ckeditor5-html-support';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import {
     Image,
@@ -24,6 +24,7 @@ class InlineEditor extends InlineEditorBase { }
 const plugins = [
     Alignment,
     Bold,
+    DataFilter,
     Essentials,
     GeneralHtmlSupport,
     Heading,
@@ -67,15 +68,15 @@ const config = {
         ]
     },
     language: 'zh',
-    // https://ckeditor.com/docs/ckeditor5/latest/features/html/general-html-support.html
-    allow: [
-        {
-            name: /.*/,
-            attributes: true,
-            classes: true,
-            styles: true
-        }
-    ],
+    // // https://ckeditor.com/docs/ckeditor5/latest/features/html/general-html-support.html
+    // allow: [
+    //     {
+    //         name: /.*/,
+    //         attributes: true,
+    //         classes: true,
+    //         styles: true
+    //     }
+    // ],
 };
 
 ClassicEditor.defaultConfig = config;
