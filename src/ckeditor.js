@@ -17,6 +17,7 @@ import { List } from '@ckeditor/ckeditor5-list';
 import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
 
 class ClassicEditor extends ClassicEditorBase { }
 class InlineEditor extends InlineEditorBase { }
@@ -39,6 +40,7 @@ const plugins = [
     MediaEmbed,
     Paragraph,
     PasteFromOffice,
+    RemoveFormat,
 ];
 
 ClassicEditor.builtinPlugins = plugins;
