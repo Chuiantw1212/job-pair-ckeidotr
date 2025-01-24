@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,7 @@
     "@ckeditor/ckeditor5-basic-styles": "^44.1.0",
     "@ckeditor/ckeditor5-block-quote": "^44.1.0",
     "@ckeditor/ckeditor5-cloud-services": "^44.1.0",
+    "@ckeditor/ckeditor5-dev-translations": "^43.0.1",
     "@ckeditor/ckeditor5-dev-utils": "43",
     "@ckeditor/ckeditor5-editor-classic": "^44.1.0",
     "@ckeditor/ckeditor5-essentials": "^44.1.0",

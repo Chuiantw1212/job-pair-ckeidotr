@@ -5,6 +5,8 @@
 const path = require('path');
 const { styles } = require('@ckeditor/ckeditor5-dev-utils');
 
+const { CKEditorTranslationsPlugin } = require('@ckeditor/ckeditor5-dev-translations');
+
 module.exports = {
 	// https://webpack.js.org/configuration/entry-context/
 	entry: './app.js',
@@ -14,6 +16,20 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
+
+	// 找不到官方文件了
+	plugins: [
+		new CKEditorTranslationsPlugin({
+			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
+			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.ts).
+			language: 'zh_TW',
+			// additionalLanguages: 'all'
+		}),
+		new webpack.BannerPlugin({
+			banner: bundler.getLicenseBanner(),
+			raw: true
+		})
+	],
 
 	module: {
 		rules: [
