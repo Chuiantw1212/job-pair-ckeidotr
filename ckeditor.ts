@@ -98,6 +98,6 @@ class Editor extends ClassicEditor {
     };
 }
 
-(window as any).CKEDITOR = Editor
+(window as any).CKEDITOR = Editor.create
 
 export default Editor;
