@@ -17,15 +17,15 @@ module.exports = {
 		filename: 'bundle.js'
 	},
 
-	// // 找不到官方文件了
-	// plugins: [
-	// 	new CKEditorTranslationsPlugin({
-	// 		// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
-	// 		// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.ts).
-	// 		language: 'zh_TW',
-	// 		// additionalLanguages: 'all'
-	// 	}),
-	// ],
+	// 找不到官方文件了
+	plugins: [
+		new CKEditorTranslationsPlugin({
+			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
+			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.ts).
+			language: 'zh',
+			// additionalLanguages: 'all'
+		}),
+	],
 
 	module: {
 		rules: [
