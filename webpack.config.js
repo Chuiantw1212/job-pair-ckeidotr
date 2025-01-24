@@ -30,6 +30,10 @@ module.exports = {
 	module: {
 		rules: [
 			{
+				test: /\.ts$/,
+				use: 'ts-loader'
+			},
+			{
 				test: /ckeditor5-[^/\\]+[/\\]theme[/\\]icons[/\\][^/\\]+\.svg$/,
 
 				use: ['raw-loader']

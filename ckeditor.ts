@@ -78,7 +78,7 @@ class Editor extends ClassicEditor {
         },
 
         // This value must be kept in sync with the language defined in webpack.config.js.
-        language: 'en',
+        language: 'zh_TW',
         image: {
             toolbar: [
                 'imageTextAlternative',
