@@ -1,12 +1,14 @@
 // The editor creator to use.
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 
+import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Bold, Italic } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
 import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
+import { Font, FontSize, FontColor } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
 import {
     Image,
@@ -21,6 +23,7 @@ import { List } from '@ckeditor/ckeditor5-list';
 import { MediaEmbed } from '@ckeditor/ckeditor5-media-embed';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
+import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { Table, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 
@@ -35,6 +38,7 @@ class Editor extends ClassicEditor {
         Bold,
         CloudServices,
         Essentials,
+        Font, FontSize, FontColor,
         Heading,
         Image,
         ImageCaption,
@@ -48,9 +52,11 @@ class Editor extends ClassicEditor {
         MediaEmbed,
         Paragraph,
         PasteFromOffice,
+        RemoveFormat,
         Table,
         TableToolbar,
-        TextTransformation
+        TextTransformation,
+        WordCount,
     ];
 
     public static override defaultConfig = {
@@ -59,8 +65,12 @@ class Editor extends ClassicEditor {
                 'alignment',
                 'heading',
                 '|',
+                'fontSize',
+                '|',
                 'bold',
                 'italic',
+                'underline',
+                'fontColor',
                 'link',
                 'bulletedList',
                 'numberedList',
@@ -69,7 +79,6 @@ class Editor extends ClassicEditor {
                 'indent',
                 '|',
                 'imageUpload',
-                'blockQuote',
                 'insertTable',
                 'mediaEmbed',
                 'undo',

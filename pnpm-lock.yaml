@@ -35,6 +35,9 @@ importers:
       '@ckeditor/ckeditor5-essentials':
         specifier: ^44.1.0
         version: 44.1.0
+      '@ckeditor/ckeditor5-font':
+        specifier: ^44.1.0
+        version: 44.1.0
       '@ckeditor/ckeditor5-heading':
         specifier: ^44.1.0
         version: 44.1.0
@@ -59,6 +62,9 @@ importers:
       '@ckeditor/ckeditor5-paste-from-office':
         specifier: ^44.1.0
         version: 44.1.0
+      '@ckeditor/ckeditor5-remove-format':
+        specifier: ^44.1.0
+        version: 44.1.0
       '@ckeditor/ckeditor5-table':
         specifier: ^44.1.0
         version: 44.1.0
@@ -66,6 +72,9 @@ importers:
         specifier: ^44.1.0
         version: 44.1.0
       '@ckeditor/ckeditor5-typing':
+        specifier: ^44.1.0
+        version: 44.1.0
+      '@ckeditor/ckeditor5-word-count':
         specifier: ^44.1.0
         version: 44.1.0
       css-loader:
