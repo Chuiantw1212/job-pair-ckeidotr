@@ -1,6 +1,6 @@
 // The editor creator to use.
+import '@ckeditor/ckeditor5-core'
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
-
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Autoformat } from '@ckeditor/ckeditor5-autoformat';

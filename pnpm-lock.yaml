@@ -23,6 +23,9 @@ importers:
       '@ckeditor/ckeditor5-cloud-services':
         specifier: ^44.1.0
         version: 44.1.0
+      '@ckeditor/ckeditor5-core':
+        specifier: ^44.1.0
+        version: 44.1.0
       '@ckeditor/ckeditor5-dev-translations':
         specifier: ^43.0.1
         version: 43.0.1
