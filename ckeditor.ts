@@ -10,6 +10,7 @@ import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { Font, FontSize, FontColor } from '@ckeditor/ckeditor5-font';
 import { Heading } from '@ckeditor/ckeditor5-heading';
+import { HtmlEmbed } from '@ckeditor/ckeditor5-html-embed';
 import {
     Image,
     ImageCaption,
@@ -40,6 +41,7 @@ class Editor extends ClassicEditor {
         Essentials,
         Font, FontSize, FontColor,
         Heading,
+        HtmlEmbed,
         Image,
         ImageCaption,
         ImageStyle,

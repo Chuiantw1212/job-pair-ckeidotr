@@ -44,6 +44,9 @@ importers:
       '@ckeditor/ckeditor5-heading':
         specifier: ^44.1.0
         version: 44.1.0
+      '@ckeditor/ckeditor5-html-embed':
+        specifier: ^44.1.0
+        version: 44.1.0
       '@ckeditor/ckeditor5-image':
         specifier: ^44.1.0
         version: 44.1.0
